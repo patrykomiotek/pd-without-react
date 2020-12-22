@@ -1,0 +1,23 @@
+<!-- Render Hello World in plain JavaScript using div container  -->
+
+<!-- Create (in HTML) a <body> with a <div> with the id of "root" -->
+<!-- and class container -->
+<!-- Then create a <script type="module"> for your JavaScript -->
+
+<!-- in second example remove <div id="root" /> and make it working using plain JS -->
+
+<body>
+  <!-- <div id="root"></div> -->
+  <script type="text/javascript">
+    // create root element
+    const rootElement = document.createElement('div');
+    rootElement.setAttribute('id', 'root');
+    document.body.append(rootElement);
+
+    // create child element
+    const element = document.createElement('div');
+    element.textContent = 'Hello World';
+    element.className = 'container';
+    rootElement.append(element);
+  </script>
+</body>

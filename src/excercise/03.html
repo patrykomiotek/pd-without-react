@@ -1,0 +1,39 @@
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@17.0.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+
+  <script type="text/babel">
+
+    function Greetings(props) {
+      const { name, age, city } = props;
+      return (
+        <div>Hello {name}, {age}. City: {city}</div>
+      );
+    }
+    Greetings.defaultProps = {
+      name: '',
+      city: 'Kraków'
+    };
+    Greetings.propTypes = {
+      age: PropTypes.number.isRequired
+    }
+
+    const day = 'Monday';
+    const element = (
+      <div className="container">
+        <span>Hello</span> <span>World</span>
+        <div>{day}</div>
+        {/*Greetings('Patryk')*/}
+        <Greetings name="Patryk" age={35} />
+      </div>
+    );
+
+    // differences between JSX and HTML syntax from the React docs here:
+    // https://reactjs.org/docs/dom-elements.html#differences-in-attributes
+
+    ReactDOM.render(element, document.getElementById('root'))
+  </script>
+</body>
